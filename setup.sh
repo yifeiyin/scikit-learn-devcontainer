@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ -z "$1" ]; then
     echo 'Usage: ./setup.sh <fork>'
@@ -24,10 +24,18 @@ EOF
 
 chmod +x ./.devcontainer/setup.sh
 
-echo 'Now, open scikit-learn in vscode remote container.'
-echo 'Then, run `./.devcontainer/setup.sh` in the terminal.'
-
+echo '-------------------------------'
+echo
 if which code > /dev/null; then
     echo 'Opening vscode for you...'
     code .
+else
+    echo 'Now, open scikit-learn in VSCode.'
 fi
+echo
+echo 'Choose "Reopen in Container" in the popup.'
+echo
+echo 'Then, run `./.devcontainer/setup.sh` in the container terminal.'
+echo
+echo '-------------------------------'
+

@@ -10,23 +10,10 @@ You must have
 
 ## Get Started
 
-* Open the repository within VS Code, click on the remote development button on bottom left.
-
-* Choose `Reopen in Container`
-
-* Open the built-in terminal within VS Code.
-
-* Edit `setup.sh` to point to your own fork of `scikit-learn`.
-
-* Run the following command to setup everything.
-
-```
-./setup.sh
-```
-
-> This command can take a really really long time.
-
-* You are good to go! `scikit-learn` is built and installed within `_work/scikit-learn` directory.
+1. Clone this repo
+2. `./setup.sh <your fork>`, ie `./setup.sh yifeiyin`
+3. Open VSCode with the folder `./scikit` if it's not open already – the script will open vscode for you if the command `code` is available
+4. Run `./.devcontainer/setup.sh` **inside the container**
 
 ## Contributing
 
