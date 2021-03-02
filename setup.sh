@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
 
-if [ -z "$1" ]; then
-    echo 'Usage: ./setup.sh <fork>'
-    exit 1
-fi
+FORK='https://github.com/UTSCCSCD01/course-project-404GroupNotFound.git'
 
-# Modify this variable to point to your own fork
-FORK="https://github.com/$1/scikit-learn.git"
-
-[ -d 'scikit-learn' ] || git clone "$FORK" scikit-learn
+[ -d 'scikit-learn' ] || git clone "$FORK" scikit-learn --branch skmain
 cd scikit-learn
 git remote add upstream https://github.com/scikit-learn/scikit-learn.git
 
@@ -18,6 +12,7 @@ echo '.devcontainer/' >> .git/info/exclude
 
 cat > ./.devcontainer/setup.sh <<EOF
 # Run this file **inside the container**
+git reset --force
 pip install --no-build-isolation --editable .
 pre-commit install
 EOF
