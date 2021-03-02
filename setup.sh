@@ -12,7 +12,7 @@ echo '.devcontainer/' >> .git/info/exclude
 
 cat > ./.devcontainer/setup.sh <<EOF
 # Run this file **inside the container**
-git reset --force
+git reset --hard
 pip install --no-build-isolation --editable .
 pre-commit install
 EOF
